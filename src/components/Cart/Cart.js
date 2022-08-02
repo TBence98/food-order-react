@@ -75,25 +75,6 @@ const Cart = (props) => {
         </ul>
     );
 
-    const actions = (
-        <div className={classes.actions}>
-            <button
-                type="button"
-                className={classes["button--alt"]}
-                onClick={props.onClose}
-            >
-                Close
-            </button>
-            <button
-                className={classes.button}
-                type="button"
-                onClick={orderHandler}
-            >
-                Order
-            </button>
-        </div>
-    );
-
     const closeAction = (
         <div className={classes.actions}>
             <button
@@ -106,60 +87,73 @@ const Cart = (props) => {
         </div>
     );
 
-    const cartContent = (
-        <>
+    if (error) {
+        return (
+            <Modal>
+                <div className={classes.message}>
+                    <p>{error}</p>
+                </div>
+                {closeAction}
+            </Modal>
+        );
+    }
+
+    if (isSendingData) {
+        return (
+            <Modal>
+                <div className={classes.message}>
+                    <p>Sending data...</p>
+                </div>
+                {closeAction}
+            </Modal>
+        );
+    }
+
+    if (isSubmited) {
+        return (
+            <Modal>
+                <div className={classes.message}>
+                    <p>Successful Order!</p>
+                </div>
+                {closeAction}
+            </Modal>
+        );
+    }
+
+    if (isOrdered) {
+        return (
+            <Modal>
+                <OrderForm
+                    onConfirm={confirmedOrderHandler}
+                    onClose={props.onClose}
+                />
+            </Modal>
+        );
+    }
+
+    return (
+        <Modal>
             {cartItems}
             <div className={classes.total}>
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>
-            {!isOrdered && actions}
-        </>
-    );
-
-    const sendingOrderContent = (
-        <>
-            <div className={classes.message}>
-                <p>Sending data...</p>
+            <div className={classes.actions}>
+                <button
+                    type="button"
+                    className={classes["button--alt"]}
+                    onClick={props.onClose}
+                >
+                    Close
+                </button>
+                <button
+                    className={classes.button}
+                    type="button"
+                    onClick={orderHandler}
+                >
+                    Order
+                </button>
             </div>
-            {closeAction}
-        </>
-    );
-
-    const successfulOrderContent = (
-        <>
-            <div className={classes.message}>
-                <p>Successful Order!</p>
-            </div>
-            {closeAction}
-        </>
-    );
-
-    const failedOrderContent = (
-        <>
-            <div className={classes.message}>
-                <p>{error}</p>
-            </div>
-            {closeAction}
-        </>
-    );
-
-    return (
-        <Modal onClose={props.onClose}>
-            {!error &&
-                !isSendingData &&
-                !isSubmited &&
-                !isOrdered &&
-                cartContent}
-            {!error && !isSendingData && !isSubmited && isOrdered && (
-                <OrderForm
-                    onConfirm={confirmedOrderHandler}
-                    onClose={props.onClose}
-                />
-            )}
-            {isSendingData && sendingOrderContent}
-            {!error && isSubmited && !isSendingData && successfulOrderContent}
-            {error && isSubmited && !isSendingData && failedOrderContent}
         </Modal>
     );
 };
