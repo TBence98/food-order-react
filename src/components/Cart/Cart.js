@@ -113,12 +113,6 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{totalAmount}</span>
             </div>
-            {isOrdered && (
-                <OrderForm
-                    onConfirm={confirmedOrderHandler}
-                    onClose={props.onClose}
-                />
-            )}
             {!isOrdered && actions}
         </>
     );
@@ -152,7 +146,17 @@ const Cart = (props) => {
 
     return (
         <Modal onClose={props.onClose}>
-            {!error && !isSendingData && !isSubmited && cartContent}
+            {!error &&
+                !isSendingData &&
+                !isSubmited &&
+                !isOrdered &&
+                cartContent}
+            {!error && !isSendingData && !isSubmited && isOrdered && (
+                <OrderForm
+                    onConfirm={confirmedOrderHandler}
+                    onClose={props.onClose}
+                />
+            )}
             {isSendingData && sendingOrderContent}
             {!error && isSubmited && !isSendingData && successfulOrderContent}
             {error && isSubmited && !isSendingData && failedOrderContent}
