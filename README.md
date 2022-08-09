@@ -13,8 +13,8 @@ My objective in building this project was to learn how to send requests to serve
 ### Description
 
 Food Order App is a single-page application for ordering meals developed with react. I found this project in an online course, but since I added a quite few
-own solutions, (configure inputs, form validation, making responsible, etc...) and I also have a version without the HTTP requests which is 100% my code, find it ethically acceptable to include
-this project in my repo.
+own solutions, (configure inputs, form validation, making responsible, etc...) and I also have a version without the HTTP requests which is 100% my code, I find it ethically acceptable to include
+this project in my repo. You can check my base version here: [Base version](/my_base_version)
 
 ### Features
 
