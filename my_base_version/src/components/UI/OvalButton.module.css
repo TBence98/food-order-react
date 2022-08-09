@@ -1,0 +1,9 @@
+.ovalButton {
+    background-color: rgb(167, 43, 29);
+    border: none;
+    padding: .4rem 1.6rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}

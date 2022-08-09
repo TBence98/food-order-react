@@ -1,0 +1,43 @@
+.list-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(167, 43, 29);
+    padding: .3rem;
+}
+
+.counter {
+    width: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b9a9a9;;
+    border-radius: 7px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.price {
+    display: inline-block;
+    margin-right: 4rem;
+    font-weight: bold;
+    color: brown;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 6rem;
+}
+
+.control-button {
+    color: brown;
+    background-color: white;
+    border: 1px solid brown;
+    padding: 0.3rem 1.1rem;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1rem;
+}

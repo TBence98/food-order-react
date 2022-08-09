@@ -1,0 +1,12 @@
+.root > .cart-button {
+    background-color: #621212;
+    padding: .5rem 3rem;
+} 
+
+.cart-counter {
+    background-color: rgb(167, 43, 29);
+    border-radius: 25px;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    margin-left: 0.7rem;
+}

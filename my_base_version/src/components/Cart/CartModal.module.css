@@ -1,0 +1,34 @@
+.cart-modal {
+    width: 40%;
+    top: 20%;
+    left: 30%;
+    padding: .5rem;
+    position: fixed;
+    z-index: 100;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4rem 0;
+}
+
+.total p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.control-btns {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.first-btn {
+    margin-right: 1rem;
+    background-color: white;
+    color: rgb(167, 43, 29);
+    border: 1px solid rgb(167, 43, 29);
+}

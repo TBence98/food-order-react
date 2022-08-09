@@ -1,0 +1,12 @@
+.message-box {
+    background-color: #444444;
+    width: 38%;
+    text-align: center;
+    margin: 11rem auto 0 auto;
+    padding: 0.7rem 0.5rem;
+    color: white;
+}
+
+.message-box h2 {
+    font-size: 1.7rem;
+}
